@@ -10,43 +10,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/fifteen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="15"
-            android:layout_gravity="center"
-            android:background="@drawable/button"/>
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:textColor="@color/dark"
+            android:layout_margin="1dp"/>
         <Button
             android:id="@+id/thirty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="30"
-            android:layout_gravity="center"
-            android:background="@drawable/button"/>
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:textColor="@color/dark"
+            android:layout_margin="1dp"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
         <Button
             android:id="@+id/sixty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="60"
-            android:layout_gravity="center"
-            android:background="@drawable/button"/>
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:textColor="@color/dark"
+            android:layout_margin="1dp"/>
         <Button
             android:id="@+id/off"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="off"
-            android:layout_gravity="center"
-            android:background="@drawable/button"/>
-
-
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:textColor="@color/dark"
+            android:layout_margin="1dp"/>
     </LinearLayout>
+        </LinearLayout>
 
     </androidx.wear.widget.BoxInsetLayout>
 

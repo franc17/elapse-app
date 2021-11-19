@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue">#b0f7f1</color>
-    <color name="grey">#969696</color>
+    <color name="pale_mint">#DEFFE1</color>
+    <color name="mint">#ACE1AF</color>
+    <color name="orange_coral">#FF430F</color>
+    <color name="dark">#352d2e</color>
 </resources>
