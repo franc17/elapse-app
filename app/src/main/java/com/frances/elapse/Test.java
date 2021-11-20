@@ -15,7 +15,7 @@ public class Test {
     public static void setChime(Context context, int type, long timeSet){
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        Intent i = new Intent(context.getApplicationContext(), ChimeReceiver.class);
+        Intent i = new Intent(context.getApplicationContext(), ElapseReceiver.class);
         i.putExtra("SET", "ALARM_TEST");
         i.putExtra("type", type);
 

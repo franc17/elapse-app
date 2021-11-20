@@ -1,5 +1,7 @@
 package com.frances.elapse;
 
+import static java.time.LocalTime.now;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -21,6 +23,7 @@ public class MainActivity extends Activity {
 
     private ActivityMainBinding binding;
     int selection;
+    LocalDateTime timeNow;
 
 
     @Override
@@ -51,8 +54,7 @@ public class MainActivity extends Activity {
                 break;
         }
 
-        LocalDateTime timeNow = LocalDateTime.now();
-
+        timeNow = LocalDateTime.now();
 
 
         binding.fifteen.setOnClickListener(new View.OnClickListener() {
@@ -105,11 +107,16 @@ public class MainActivity extends Activity {
             l = LocalTime.of(now.getHour(), 45);
         }
         else{
-            l = LocalTime.of(now.plusHours(1).getHour(), 0);
+            if(now.getHour()==23){
+                l = LocalTime.of(0, 0);
+            }
+            else {
+                l = LocalTime.of(now.plusHours(1).getHour(), 0);
+            }
         }
         LocalDateTime ldsSet = l.atDate(LocalDate.now());
         ZonedDateTime zoned = ldsSet.atZone(ZoneId.of(TimeZone.getDefault().getID()));
-        ChimeManager.setChime(context.getApplicationContext(), 15, zoned.toInstant().toEpochMilli());
+        ElapseManager.setChime(context.getApplicationContext(), 15, zoned.toInstant().toEpochMilli());
     }
 
     public static void setThirty(Context context, LocalDateTime now){
@@ -118,21 +125,32 @@ public class MainActivity extends Activity {
             l = LocalTime.of(now.getHour(), 30);
         }
         else{
+            if(now.getHour()==23){
+                l = LocalTime.of(0, 0);
+            }
+            else {
+                l = LocalTime.of(now.plusHours(1).getHour(), 0);
+            }
+        }
+        LocalDateTime ldsSet = l.atDate(LocalDate.now());
+        ZonedDateTime zoned = ldsSet.atZone(ZoneId.of(TimeZone.getDefault().getID()));
+        ElapseManager.setChime(context.getApplicationContext(), 30, zoned.toInstant().toEpochMilli());
+    }
+
+    public static void setSixty(Context context, LocalDateTime now){
+        LocalTime l;
+        if(now.getHour()==23){
+            l = LocalTime.of(0, 0);
+        }
+        else {
             l = LocalTime.of(now.plusHours(1).getHour(), 0);
         }
         LocalDateTime ldsSet = l.atDate(LocalDate.now());
         ZonedDateTime zoned = ldsSet.atZone(ZoneId.of(TimeZone.getDefault().getID()));
-        ChimeManager.setChime(context.getApplicationContext(), 30, zoned.toInstant().toEpochMilli());
-    }
-
-    public static void setSixty(Context context, LocalDateTime now){
-        LocalTime l = LocalTime.of(now.plusHours(1).getHour(), 0);
-        LocalDateTime ldsSet = l.atDate(LocalDate.now());
-        ZonedDateTime zoned = ldsSet.atZone(ZoneId.of(TimeZone.getDefault().getID()));
-        ChimeManager.setChime(context.getApplicationContext(), 60, zoned.toInstant().toEpochMilli());
+        ElapseManager.setChime(context.getApplicationContext(), 60, zoned.toInstant().toEpochMilli());
     }
 
     public static void setOff(Context context){
-        ChimeManager.setChime(context.getApplicationContext(), 0, 0);
+        ElapseManager.setChime(context.getApplicationContext(), 0, 0);
     }
 }

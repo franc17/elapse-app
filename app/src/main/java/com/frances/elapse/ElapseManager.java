@@ -7,12 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-public class ChimeManager {
+public class ElapseManager {
 
     public static void setChime(Context context, int type, long timeSet){
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        Intent i = new Intent(context.getApplicationContext(), ChimeReceiver.class);
+        Intent i = new Intent(context.getApplicationContext(), ElapseReceiver.class);
         i.putExtra("SET", "ALARM_SET");
         i.putExtra("type", type);
 

@@ -9,7 +9,7 @@ import android.util.Log;
 
 import java.time.LocalDateTime;
 
-public class ChimeReceiver extends BroadcastReceiver {
+public class ElapseReceiver extends BroadcastReceiver {
     int code;
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -18,7 +18,7 @@ public class ChimeReceiver extends BroadcastReceiver {
 
         if(intent.getStringExtra("SET").equals("ALARM_SET")){
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-            vibrator.vibrate(VibrationEffect.createWaveform(new long[]{250,100,250}, new int[]{255, 0, 255}, -1));
+            vibrator.vibrate(VibrationEffect.createWaveform(new long[]{100,100,250}, new int[]{255, 0, 255}, -1));
         }
 
         if(intent.getStringExtra("SET").equals("ALARM_TEST")){
