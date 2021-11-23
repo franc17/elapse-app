@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.frances.elapse">
+    package="com.frances.timeremind">
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -11,7 +11,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/elapse_icon"
+        android:icon="@mipmap/tr_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
@@ -28,7 +28,7 @@
             android:value="true" />
 
         <activity
-            android:name="com.frances.elapse.MainActivity"
+            android:name="com.frances.timeremind.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -37,7 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name="com.frances.elapse.ElapseReceiver"/>
+        <receiver android:name="com.frances.timeremind.ElapseReceiver"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.frances.elapse;
+package com.frances.timeremind;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -40,13 +40,13 @@ public class ElapseReceiver extends BroadcastReceiver {
         }
 
         if(code == 15){
-            MainActivity.setFifteen(context.getApplicationContext(), LocalDateTime.now());
+            com.frances.timeremind.MainActivity.setFifteen(context.getApplicationContext(), LocalDateTime.now());
         }
         else if(code == 30){
-            MainActivity.setThirty(context.getApplicationContext(), LocalDateTime.now());
+            com.frances.timeremind.MainActivity.setThirty(context.getApplicationContext(), LocalDateTime.now());
         }
         else if(code == 60){
-            MainActivity.setSixty(context.getApplicationContext(), LocalDateTime.now());
+            com.frances.timeremind.MainActivity.setSixty(context.getApplicationContext(), LocalDateTime.now());
         }
 
 

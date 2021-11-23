@@ -1,4 +1,4 @@
-package com.frances.elapse;
+package com.frances.timeremind;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -15,7 +15,7 @@ public class Test {
     public static void setChime(Context context, int type, long timeSet){
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        Intent i = new Intent(context.getApplicationContext(), ElapseReceiver.class);
+        Intent i = new Intent(context.getApplicationContext(), com.frances.timeremind.ElapseReceiver.class);
         i.putExtra("SET", "ALARM_TEST");
         i.putExtra("type", type);
 

@@ -1,4 +1,4 @@
-package com.frances.elapse;
+package com.frances.timeremind;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
-import com.frances.elapse.databinding.ActivityMainBinding;
+import com.frances.timeremind.databinding.ActivityMainBinding;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
