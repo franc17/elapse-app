@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
     public static void setFifteen(Context context, LocalDateTime now){
         LocalDateTime l;
         if(now.getMinute() < 15){
-            l = LocalDateTime.of(LocalDate.now(), LocalTime.of(now.getHour(), 0));
+            l = LocalDateTime.of(LocalDate.now(), LocalTime.of(now.getHour(), 15));
         }
         else if(now.getMinute() < 30){
             l = LocalDateTime.of(LocalDate.now(), LocalTime.of(now.getHour(), 30));
